@@ -1,0 +1,39 @@
+﻿<Window x:Class="Audio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Spootify" Height="500" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="TrackList" Grid.Row="0" SelectionChanged="TrackList_SelectionChanged"/>
+        <Slider x:Name="Slider" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged" Grid.Row="1" VerticalAlignment="Center" Margin="20 10" Minimum="0" />
+        <MediaElement x:Name="MediaElement" LoadedBehavior="Manual" MediaOpened="MediaElement_MediaOpened" MediaEnded="MediaElement_MediaEnded"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BackButton" Content="Back" Background="Transparent" Grid.Column="1" Click="BackButton_Click"/>
+            <Button x:Name="PlayPauseButton" Content="Pause" Background="Transparent" Grid.Column="2" Click="PlayPauseButton_Click" />
+            <Button x:Name="NextButton" Content="Next" Background="Transparent" Grid.Column="3" Click="NextButton_Click" />
+            <Button x:Name="RepeatButton" Content="Repeat" Background="Transparent" Grid.Column="4" Click="RepeatButton_Click"/>
+            <Button x:Name="ShuffleButton" Content="Shuffle" Background="Transparent" Grid.Column="5" Click="ShuffleButton_Click" />
+            <Button x:Name="OpenFolder" Content="Открыть" Grid.Column="6"  Click="OpenFolder_Click"/>
+            <TextBlock x:Name="CurrentTime" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="FinalTime" HorizontalAlignment="Center" Grid.Column="7" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TextAlignment="Center" Visibility="Hidden"/>
+        </Grid>
+
+    </Grid>
+</Window>
